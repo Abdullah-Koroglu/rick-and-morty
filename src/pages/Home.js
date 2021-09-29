@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 export default (props) => {
     const [data, setData] = useState([])
-    const [page, setPage] = useState(0)
+    const [page, setPage] = useState(1)
     const [end, setEnd] = useState(false)
 
     useEffect(() => {
@@ -26,14 +26,11 @@ export default (props) => {
             });
     }
     return (
-        <div>
-
-
-            {/* naber home */}
+        <div class="main-container">
             {data.map(i => {
-                return <div onClick={() => { window.location = "/user/" + i.id }}>
-                    <img src={i.image} alt={i.name} width="500" height="600" />
-                    {i.name}
+                return <div class="" onClick={() => { window.location = "/user/" + i.id }}>
+                    <img class="image-container" src={i.image} alt={i.name}/>
+                    <h3 class="image-name-container">{i.name} </h3>
                 </div>
             })}
         </div>

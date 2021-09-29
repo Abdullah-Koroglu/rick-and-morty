@@ -22,15 +22,17 @@ export default (props) => {
 },[])
     console.log(props.match.params.user);
   return (
-    <div>
-                    <img src={data.image} alt={data.name} width="500" height="600" />
-                    <p>{data.name}</p>
-                    <p>{data.location?.name}</p>
+    <div class="main-container">
+                    <img class="image-container" src={data.image} alt={data.name} />
+                    <div class="image-detail"><p><strong>Name :</strong> {data.name}</p>
+                    <p><strong>Location : </strong> {data.location?.name}</p>
+                    <strong>Episodes :</strong>
                     {episodes.map(i=>{
                         return <div>
                             {i.name}
                         </div>
                     })}
+                    </div>
 
     </div>
   );
